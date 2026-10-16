@@ -1,0 +1,33 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{font-size:var(--fs,16px)}
+body{background:#2A1830;color:#F7F0E5;font-family:Inter,system-ui,sans-serif;margin:0}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #F7F0E5;outline-offset:2px}
+.dys, .dys *{font-family:Arial,Verdana,sans-serif!important;line-height:1.75!important;letter-spacing:.01em}
+.dys p, .dys li{margin-bottom:.6em}
+.rm *{animation:none!important;transition:none!important}
+/* High-contrast: true palette swap, not a filter, so nothing depends on colour alone */
+.hc{background:#000!important;color:#fff!important}
+.hc .card,.hc nav{background:#000!important;border-color:#FFD966!important;border-width:2px!important}
+.hc .btn{background:#FFD966!important;color:#000!important;border:2px solid #fff!important}
+.hc .btn2{color:#FFD966!important;border:2px solid #FFD966!important}
+.hc .chip{border-color:#FFD966!important;color:#fff!important}
+.hc .chip[aria-pressed=true]{background:#FFD966!important;color:#000!important}
+.hc .text-muted, .hc .text-gold{color:#FFD966!important}
+.card{@apply rounded-2xl border border-gold/30 bg-panel p-4 shadow-lg}
+.btn{@apply min-h-[44px] rounded-xl bg-gradient-to-b from-gold to-terra px-4 font-semibold text-espresso active:scale-95 disabled:opacity-40}
+.btn2{@apply min-h-[44px] rounded-xl border border-gold/40 px-4 text-gold active:scale-95}
+.chip{@apply min-h-[40px] shrink-0 rounded-full border border-gold/30 px-3 text-sm text-cream}
+.chip[aria-pressed=true]{@apply bg-gold text-espresso font-semibold}
+.imgcard{@apply h-36 w-full rounded-xl object-cover border border-gold/20}
+/* QuestVerse additions */
+body{background:#2A1830}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+.rise{animation:rise .45s ease both}.pop{animation:pop .5s ease both}
+.flip{perspective:900px}.flip>.in{position:relative;transition:transform .6s;transform-style:preserve-3d}.flip.on>.in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;width:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden}.face.bk{transform:rotateY(180deg)}
+.card{transition:transform .2s,box-shadow .2s}.btn,.btn2,.chip{transition:transform .15s,filter .15s}.btn:hover{filter:brightness(1.1)}
+.big .btn,.big .btn2,.big .chip,.big input:not([type=checkbox]),.big select,.big textarea{min-height:56px;font-size:1.05em}
+.big input[type=checkbox]{width:32px!important;height:32px!important}
+.hc .face{background:#000!important;color:#fff!important;border:2px solid #FFD966!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
